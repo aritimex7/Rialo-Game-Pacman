@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rialo Pac-Man</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="asset/a.png">
+</head>
+<body>
+    <div id="username-overlay" class="overlay">
+        <div class="menu-box">
+            <img src="asset/logo.png" alt="Game Logo" id="game-logo">
+            
+            <p>Enter your name:</p>
+            <input type="text" id="username-input" placeholder="Username" maxlength="10" autofocus>
+            <button id="start-button">Start Game</button>
+            
+            <p class="credit">Made by Jejaw</p>
+            <p class="credit-secondary">for the Rialo Community</p>
+
+            <div class="social-links">
+                <a href="https://discord.com/users/jejaw" target="_blank" title="Discord: jejaw">
+                    <img src="https://assets-global.website-files.com/6257adef93867e50d84d30e2/636e0a6cc3c481a15a141738_icon_clyde_white_RGB.png" alt="Discord Logo">
+                </a>
+                <a href="https://x.com/_jejaw" target="_blank" title="X: _jejaw">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/57/X_logo_2023_%28white%29.png" alt="X Logo">
+                </a>
+                
+                <div class="separator"></div>
+
+                <a href="https://discord.gg/rialoprotocol" target="_blank" title="Discord: Rialo Protocol">
+                    <img src="https://assets-global.website-files.com/6257adef93867e50d84d30e2/636e0a6cc3c481a15a141738_icon_clyde_white_RGB.png" alt="Discord Logo">
+                </a>
+                <a href="https://x.com/RialoHQ" target="_blank" title="X: RialoHQ">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/57/X_logo_2023_%28white%29.png" alt="X Logo">
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div id="main-wrapper" class="hidden">
+        <div id="game-container"></div>
+        <div id="ui-container">
+            <h2>LEVEL</h2>
+            <p id="level-display">1</p>
+            <hr>
+            <h2>SCORE</h2>
+            <p id="score-display">0</p>
+            <hr>
+            <h2>LEADERBOARD</h2>
+            <ul id="leaderboard-list"></ul>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/phaser@3.60.0/dist/phaser.min.js"></script>
+    <script src="game.js"></script>
+</body>
+</html>
