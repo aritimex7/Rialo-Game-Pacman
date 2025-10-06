@@ -1,14 +1,12 @@
-
 const isLocal = window.location.hostname === '127.0.0.1' || window.location.hostname === 'localhost';
 
 async function getLeaderboard() {
     if (isLocal) {
-        console.log("Mode Lokal: Mengambil leaderboard dari localStorage.");
         return JSON.parse(localStorage.getItem('pacmanLeaderboard') || '[]');
     } else {
         try {
             const response = await fetch('/api/get-scores');
-            if (!response.ok) { console.error('Gagal mengambil leaderboard dari server'); return []; }
+            if (!response.ok) { return []; }
             return await response.json();
         } catch (error) {
             console.error('Error fetching leaderboard:', error);
@@ -19,7 +17,6 @@ async function getLeaderboard() {
 
 async function saveScore(name, score) {
     if (isLocal) {
-        console.log("Mode Lokal: Menyimpan skor ke localStorage.");
         const leaderboard = JSON.parse(localStorage.getItem('pacmanLeaderboard') || '[]');
         leaderboard.push({ name, score });
         leaderboard.sort((a, b) => b.score - a.score);
