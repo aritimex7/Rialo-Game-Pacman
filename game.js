@@ -48,7 +48,7 @@ class GameScene extends Phaser.Scene {
 
     preload() {
         this.load.image('player', 'asset/player.png');
-        this.load.image('enemy_red', 'asset/enemy_red.png');
+        this.load.image('enemy_blue', 'asset/enemy_blue.png');
         this.load.image('enemy_blue', 'asset/enemy_blue.png');
         this.load.image('enemy_pink', 'asset/enemy_pink.png');
         this.load.image('dot', 'asset/dot.png');
@@ -209,5 +209,6 @@ class GameScene extends Phaser.Scene {
         this.add.text(this.cameras.main.centerX, this.cameras.main.centerY + 30, 'Refresh to play again', { fontSize: '20px', fill: '#FFFFFF' }).setOrigin(0.5);
     }
 }
+
 
 const config = { type: Phaser.AUTO, width: 480, height: 544, parent: 'game-container', backgroundColor: '#000000', physics: { default: 'arcade', arcade: { gravity: { y: 0 } } }, scene: [GameScene]};
